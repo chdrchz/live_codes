@@ -9,7 +9,7 @@ int main()
     printf("\n2 + 2 = %d ", AddNumbers(2, 2, 0));
     printf("\n3 + 4 + 5 = %d ", AddNumbers(3, 3, 4, 5, 0));
     printf("\n6 + 7 + 8 + 9 = %d ", AddNumbers(4, 6, 7, 8, 9, 0));
-    printf("\n");
+    printf("\n\n");
 
     return 0;
 }
