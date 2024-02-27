@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
         printf("Argument count too low!\n");
         return (98); /* This number represents a typical error code for an invalid number of args */
     }
-
     /* Assign the arguments passed on the command line */
     /* The atoi() function converts a string into an int
     This is necessary because argv by default is an array of strings */

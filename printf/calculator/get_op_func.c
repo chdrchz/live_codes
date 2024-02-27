@@ -13,7 +13,6 @@ int (*get_op_func(char *operator))(int, int)
     op_t operators[] = { /* Notice how this array is of type op_t (that was our structure!) */
         {"+", op_add},
         {"-", op_sub},
-        {"*", op_mul},
         {"/", op_div},
         {NULL, NULL} /* This is null because the program needs to know when to stop */
     };
