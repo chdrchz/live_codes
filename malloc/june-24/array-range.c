@@ -14,7 +14,7 @@ int *array_range(int min, int max) {
     }
 
     // calculate the total size of the array
-    total_size = ((max + 1) - min);
+    total_size = ((max - min) + 1);
 
     // allocate memory based on size
     int_array = malloc(sizeof(int) * total_size);
@@ -28,25 +28,10 @@ int *array_range(int min, int max) {
     for (i = 0; i < total_size; i++) {
         int_array[i] = min + i;
     }
+    
+    // free memory
+    free (int_array);
 
-    return int_array;
-}
-
-int main() {
-    int min = 5;
-    int max = 10;
-    int *int_array = 0;
-
-    int_array = array_range(min, max);
-
-    if (int_array != NULL) {
-        printf("Array: ");
-        for (int i = 0; i <= max - min; i++) {
-            printf("%d ", int_array[i]);
-        }
-        free(int_array);
-    } else {
-        printf("Failed to create array.");
-    }
-    return (0);
+    // return pointer
+    return (int_array);
 }
