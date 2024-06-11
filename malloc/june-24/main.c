@@ -15,8 +15,6 @@ int *array_range(int min, int max) {
 
     // loop through size of the range
 
-    // free memory
-
     // return pointer
 }
 
@@ -29,10 +27,14 @@ int main() {
 
     if (int_array != NULL) {
         printf("Array: ");
+
         for (int i = 0; i <= max - min; i++) {
             printf("%d ", int_array[i]);
         }
+
+        // don't have to free up there, cause we are freeing here
         free(int_array);
+
     } else {
         printf("Failed to create array.");
     }
