@@ -109,7 +109,7 @@ $(document).ready(() => {
       // No more questions; display a completion message with the score
       $(".questions-container").html(`
         <h2>You have completed the quiz!</h2>
-        <p>Your score is: ${score} out of ${questions.length}</p>
+        <p class="completed">Your score is: ${score} out of ${questions.length}</p>
       `);
     }
   }
