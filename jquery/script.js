@@ -45,75 +45,61 @@ $(document).ready(() => {
     "A forest spirit",
   ];
 
-  let currentQuestionIndex = 0; // Start with the first question
-  let score = 0; // Initialize score variable
+  // 1b: Initialize Quiz State Variables
+  // These track the current progress of the quiz
+  let currentQuestionIndex = 0; // Keeps track of which question we're on
+  let score = 0; // Tracks the user's correct answers
 
-  // Function to render the current question
+
+  // STEP 2: Render Question Function
+  // This function displays the current question and its answer options
   function renderQuestion(index) {
-    // Clear the container
-    $(".questions-container").empty();
+    // 2a: Clear previous question
+    
+    // 2b: Create and display the question text
+    
+    // 2c: Create answer buttons dynamically
+    
+    // Create a container for each set of answer buttons
+      
+    // Create clickable buttons for each answer
 
-    // Create the question element
-    const questionElement = $("<h2>").text(questions[index]);
-    $(".questions-container").append(questionElement);
-
-    // Create the answer buttons
-    answers[index].forEach((answer) => {
-        // Create a div to hold the answer buttons
-        const answersDiv = $("<div>").addClass("answer-buttons-container");
-      
-        // Create the answer button element
-        const answerButton = $("<button>")
-          .addClass("answer-button")
-          .text(answer)
-          .click(() => {
-            checkAnswer(answer, index); // Check the answer when clicked
-          });
-      
-        // Append the answer button to the div
-        answersDiv.append(answerButton);
-      
-        // Append the answers div to the .questions-container
-        $(".questions-container").append(answersDiv);
-      });
+    // When clicked, check if the answer is correct
+          
+    // Add the button to its container and to the main container
   }
 
-  // Function to check the answer and give feedback
+
+  // STEP 3: Answer Checking Function
+  // Evaluates the selected answer and provides feedback
   function checkAnswer(answer, index) {
-    // Find the button that was clicked
-    const clickedButton = $(".answer-button").filter(function () {
-      return $(this).text() === answer;
-    });
+    // 3a: Find the button that was clicked
   
-    // Check if the answer is correct
-    if (answer === correctAnswers[index]) {
-      clickedButton.css("background-color", "green"); // Change button to green if correct
-      $(".questions-container").append("<p class='feedback-correct'>Correct!</p>");
-      score++; // Increment the score for a correct answer
-    } else {
-      clickedButton.css("background-color", "red"); // Change button to red if incorrect
-      $(".questions-container").append("<p class='feedback-incorrect'>Incorrect. The correct answer was: " + correctAnswers[index] + "</p>");
-    }
-  
-    // After feedback, move to the next question
-    setTimeout(nextQuestion, 1000); // Wait 1 second before showing the next question
+    // 3b: Determine if the answer is correct
+
+    // Correct answer: green button, increment score
+    
+    // Incorrect answer: red button, show correct answer
+
+    // 3c: Move to next question after a short delay
+
   }
 
-  // Function to move to the next question
+
+  // STEP 4: Next Question Management Function
+  // Handles progression through the quiz
   function nextQuestion() {
-    currentQuestionIndex++; // Increment the index
+    // 4a: Increment the question index
 
-    if (currentQuestionIndex < questions.length) {
-      renderQuestion(currentQuestionIndex); // Render the next question
-    } else {
-      // No more questions; display a completion message with the score
-      $(".questions-container").html(`
-        <h2>You have completed the quiz!</h2>
-        <p class="completed">Your score is: ${score} out of ${questions.length}</p>
-      `);
-    }
+    // 4b: Check if there are more questions
+    
+      // If yes, render the next question
+      
+      // 4c: If no more questions, show final score
+  
   }
 
-  // Render the first question on page load
-  renderQuestion(currentQuestionIndex);
+  // STEP 5: Start the Quiz
+  // Render the first question when the page loads
+  
 });
